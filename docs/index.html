@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiquidView — a liquid media viewer for macOS</title>
+<meta name="description" content="LiquidView pours images, comics, video and documents out of your screen edges like water. mpv-powered video, native image viewer, QuickLook. Nothing else to install.">
+<style>
+  :root {
+    --ink: #0f1420; --bg1: #22d3ee; --bg2: #6d5efc; --bg3: #b02ee0;
+    --glass: rgba(15, 20, 32, .82); --text: #fff; --muted: rgba(255,255,255,.66);
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", Segoe UI, sans-serif;
+    color: var(--text);
+    background: linear-gradient(140deg, var(--bg1), var(--bg2) 52%, var(--bg3));
+    min-height: 100vh;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  .drop { font-size: 60px; line-height: 1; filter: drop-shadow(0 6px 14px rgba(0,0,0,.3)); }
+  h1 { font-size: 44px; letter-spacing: -.02em; margin: 12px 0 6px; }
+  .tag { font-size: 19px; color: var(--muted); max-width: 580px; }
+  .card {
+    background: var(--glass); border-radius: 28px; padding: 26px 28px;
+    margin-top: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.25);
+    backdrop-filter: blur(12px);
+  }
+  .card h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em;
+             color: var(--muted); margin-bottom: 12px; }
+  pre {
+    background: rgba(0,0,0,.45); border-radius: 14px; padding: 16px 18px;
+    overflow-x: auto; font: 13.5px/1.5 ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .hint { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .feat { background: rgba(255,255,255,.07); border-radius: 18px; padding: 16px 18px; }
+  .feat b { display: block; margin-bottom: 4px; }
+  .feat span { color: var(--muted); font-size: 14px; }
+  .keys { display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+  .kbd { font: 12px ui-monospace, "SF Mono", Menlo, monospace; background: rgba(0,0,0,.4);
+         border-radius: 7px; padding: 3px 8px; color: var(--text); }
+  a { color: #bff3ff; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    background: var(--glass); color: var(--text); text-decoration: none;
+    font-weight: 600; box-shadow: 0 10px 26px rgba(0,0,0,.25);
+  }
+  .btn.alt { background: rgba(255,255,255,.14); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="drop">🎬</div>
+  <h1>LiquidView</h1>
+  <p class="tag">A liquid media viewer for macOS. Drop an image, comic archive,
+  video or document onto a screen edge — it pours out like water. Stick it to the
+  edge, drag it off to float, or press F for full screen.</p>
+
+  <div class="btns">
+    <a class="btn" href="https://github.com/XPro-Gamer-Rhine/LiquidView-app/releases/latest">Download</a>
+    <a class="btn alt" href="https://github.com/XPro-Gamer-Rhine/LiquidView-app">GitHub</a>
+  </div>
+
+  <div class="card">
+    <h2>Install — one line</h2>
+    <pre>curl -fsSL https://raw.githubusercontent.com/XPro-Gamer-Rhine/LiquidView-app/main/install.sh | bash</pre>
+    <p class="hint">macOS 14+. Nothing else to install — mpv, ffmpeg and every
+    library ship inside the app. The installer downloads with curl (no
+    quarantine), copies to /Applications, and launches.</p>
+  </div>
+
+  <div class="card">
+    <h2>What it opens</h2>
+    <div class="grid">
+      <div class="feat"><b>Images &amp; photos</b><span>JPEG, PNG, HEIC, RAW, WebP, AVIF, animated GIF. Zoom, pan, and page through the whole folder.</span></div>
+      <div class="feat"><b>Comic archives</b><span>Read pages straight out of a .zip / .cbz — no unzipping to disk. Numeric page order.</span></div>
+      <div class="feat"><b>Video &amp; audio</b><span>Powered by mpv with VideoToolbox hardware decoding. Plays essentially anything, full quality.</span></div>
+      <div class="feat"><b>PDF, CSV, XLSX…</b><span>Rendered with the macOS QuickLook engine. Spreadsheets open wide; documents open like a page.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Three modes · one keyboard</h2>
+    <p class="tag" style="font-size:15px">Attached to an edge · Floating (drag it
+    anywhere) · Full screen. The space around an attached card stays
+    click-through, so the rest of your desktop keeps working.</p>
+    <div class="keys">
+      <span class="kbd">← / → &nbsp;prev · next / seek</span>
+      <span class="kbd">↑ / ↓ &nbsp;zoom / volume</span>
+      <span class="kbd">Space &nbsp;play · pause</span>
+      <span class="kbd">F &nbsp;full screen</span>
+      <span class="kbd">Esc &nbsp;back</span>
+    </div>
+  </div>
+
+  <footer>
+    Built on <b>LiquidKit</b>, the reusable metaball engine behind the animation.
+    100% native AppKit/SwiftUI; video via bundled libmpv. No Electron.<br>
+    Source is private; this site hosts the download &amp; installer. Made by Rhineul Islam.
+  </footer>
+</div>
+</body>
+</html>
