@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LiquidView — a liquid media viewer for macOS</title>
-<meta name="description" content="LiquidView pours images, comics, video and documents out of your screen edges like water. mpv-powered video, native image viewer, QuickLook. Nothing else to install.">
+<meta name="description" content="LiquidView pours images, video, audio, comics and documents out of your screen edges like water. Plays every video format (incl. .ts / .mkv), all image types and RAW, mpv-powered audio with mute, themes and liquid-glass. Nothing else to install.">
 <style>
   :root {
     --ink: #0f1420; --bg1: #22d3ee; --bg2: #6d5efc; --bg3: #b02ee0;
@@ -73,12 +73,23 @@
   </div>
 
   <div class="card">
-    <h2>What it opens</h2>
+    <h2>Opens practically anything</h2>
     <div class="grid">
-      <div class="feat"><b>Images &amp; photos</b><span>JPEG, PNG, HEIC, RAW, WebP, AVIF, animated GIF. Zoom, pan, and page through the whole folder.</span></div>
+      <div class="feat"><b>Images &amp; photos</b><span>JPEG, PNG, HEIC/HEIF, WebP, AVIF, JXL, TIFF, BMP, ICO, PSD, animated GIF, and camera RAW (CR2/CR3, NEF, ARW, DNG, RAF…). Zoom, pan, and page through the whole folder.</span></div>
+      <div class="feat"><b>Video — every format</b><span>MP4, MOV, MKV, WebM, AVI, WMV, FLV, MPEG, <b>.ts / .m2ts</b>, VOB, 3GP, OGV, RMVB, MXF and more. mpv + VideoToolbox hardware decoding, full quality.</span></div>
+      <div class="feat"><b>Audio</b><span>MP3, FLAC, ALAC, AAC, M4A, WAV, AIFF, OGG/Opus, WMA, APE, DSF and more — with a scrubber, volume, and one-key mute.</span></div>
       <div class="feat"><b>Comic archives</b><span>Read pages straight out of a .zip / .cbz — no unzipping to disk. Numeric page order.</span></div>
-      <div class="feat"><b>Video &amp; audio</b><span>Powered by mpv with VideoToolbox hardware decoding. Plays essentially anything, full quality.</span></div>
-      <div class="feat"><b>PDF, CSV, XLSX…</b><span>Rendered with the macOS QuickLook engine. Spreadsheets open wide; documents open like a page.</span></div>
+      <div class="feat"><b>Documents</b><span>PDF, CSV, TSV, XLSX, DOCX, Pages, Keynote, RTF, code and plain text — via the macOS QuickLook engine. Spreadsheets open wide; documents open like a page.</span></div>
+      <div class="feat"><b>Subtitles</b><span>Sidecar .srt / .ass / .vtt next to a movie load automatically.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Make it yours</h2>
+    <div class="grid">
+      <div class="feat"><b>Themes</b><span>Ten built-in looks — colour palettes (Ocean, Forest, Sakura, Midnight, Mono…) and <b>Liquid Glass</b> / frosted materials that let the desktop show through. Pick from the menu bar; applies instantly.</span></div>
+      <div class="feat"><b>Free resize</b><span>Drag the corner grip on a floating card to size it exactly how you like — media keeps its aspect, never distorts.</span></div>
+      <div class="feat"><b>Any screen edge</b><span>Pour the viewer from the top, bottom, left or right — one edge or all four, across every display.</span></div>
     </div>
   </div>
 
@@ -91,6 +102,7 @@
       <span class="kbd">← / → &nbsp;prev · next / seek</span>
       <span class="kbd">↑ / ↓ &nbsp;zoom / volume</span>
       <span class="kbd">Space &nbsp;play · pause</span>
+      <span class="kbd">M &nbsp;mute</span>
       <span class="kbd">F &nbsp;full screen</span>
       <span class="kbd">Esc &nbsp;back</span>
     </div>
